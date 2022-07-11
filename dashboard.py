@@ -6,7 +6,7 @@ from plot import Line, Pie, Bar
 import pandas as pd
 
 def base_section():
-    st. set_page_config(layout="wide")
+    # st. set_page_config(layout="wide")
 
     st.title("Beranda")
     

@@ -110,3 +110,18 @@ class Data:
         data = run_query(query)
         return data
     # mysql_disconnect()
+
+    @staticmethod
+    def get_data_kebersihan():
+        query = """
+            SELECT rp.proNama , rk2.kotaNama , rk.kecNama, k.kelNama , 
+            dsk.skHidran , dsk.skPenampung, dsk.skMataAir , dsk.skPengelolaanAir , 
+            dsk.skSumurGali , dsk.skSumurPompa , dsk.skTangkiAir 
+            FROM dt_sarana_kebersihan dsk
+            INNER JOIN kelurahan k on k.kelId = dsk.skKelId 
+            INNER JOIN ref_kecamatan rk on k.kelKecKode = rk.kecKode 
+            INNER JOIN ref_kota rk2 on rk.kecKotaKode = rk2.kotakode
+            INNER JOIN ref_provinsi rp on rp.proKode = rk2.kotaProKode;
+        """
+        data = run_query(query)
+        return data
