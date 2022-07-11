@@ -6,33 +6,33 @@ from sshtunnel import SSHTunnelForwarder
 
 
 # local config
-import os
+# import os
 
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
-ssh_host = os.environ.get('SSH_HOST')
-ssh_username = os.environ.get('SSH_USERNAME')
-ssh_password = os.environ.get('SSH_PASSWORD')
-ssh_port = os.environ.get('SSH_PORT')
-database_username = os.environ.get('DB_USERNAME')
-database_password = os.environ.get('DB_PASSWORD')
-database_name = os.environ.get('DB_NAME')
-database_host = os.environ.get('DB_HOST')
-localhost = os.environ['SSH_HOST']
+# ssh_host = os.environ.get('SSH_HOST')
+# ssh_username = os.environ.get('SSH_USERNAME')
+# ssh_password = os.environ.get('SSH_PASSWORD')
+# ssh_port = os.environ.get('SSH_PORT')
+# database_username = os.environ.get('DB_USERNAME')
+# database_password = os.environ.get('DB_PASSWORD')
+# database_name = os.environ.get('DB_NAME')
+# database_host = os.environ.get('DB_HOST')
+# localhost = os.environ['SSH_HOST']
 
 # deploy
-# import streamlit as st
+import streamlit as st
 
-# ssh_host = st.secrets['SSH_HOST']
-# ssh_username = st.secrets['SSH_USERNAME']
-# ssh_password =st.secrets['SSH_PASSWORD']
-# ssh_port = st.secrets['SSH_PORT']
-# database_username = st.secrets['DB_USERNAME']
-# database_password = st.secrets['DB_PASSWORD']
-# database_name = st.secrets['DB_NAME']
-# database_host = st.secrets['DB_HOST']
+ssh_host = st.secrets['SSH_HOST']
+ssh_username = st.secrets['SSH_USERNAME']
+ssh_password =st.secrets['SSH_PASSWORD']
+ssh_port = st.secrets['SSH_PORT']
+database_username = st.secrets['DB_USERNAME']
+database_password = st.secrets['DB_PASSWORD']
+database_name = st.secrets['DB_NAME']
+database_host = st.secrets['DB_HOST']
 
 
 def open_ssh_tunnel(verbose=False):
